@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:tls="http://www.mulesoft.org/schema/mule/tls"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/tls http://www.mulesoft.org/schema/mule/tls/current/mule-tls.xsd">
+		<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="4bd74414-88e4-4859-a562-f4ee63a08ddf" >
+		<http:listener-connection host="0.0.0.0" port="8082" readTimeout="30000000"/>
+	</http:listener-config>
+	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="03ae199f-9ac7-4d4c-8046-5813ced6163c" >
+		<http:request-connection host="millionrecords-file-system-sapi.us-e2.cloudhub.io" port="80" connectionIdleTimeout="300000000">
+		</http:request-connection>
+	</http:request-config>
+	<http:request-config name="HTTP_Request_configuration1" doc:name="HTTP Request configuration" doc:id="99b6a752-263c-433d-82c2-1a5523d389d2" >
+		<http:request-connection host="localhost" port="8085" connectionIdleTimeout="3000000"/>
+	</http:request-config>
+	<configuration doc:name="Configuration" doc:id="f1585c36-e7a5-4238-b4f0-82ea29419587" defaultErrorHandler-ref="Default_Error_Handler" />
+	
+</mule>
